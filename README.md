@@ -1,2 +1,2 @@
-# OnboardingTool---Dynatrace
+# OnboardingTool - Dynatrace
 A OnboardingTool for Dynatrace
