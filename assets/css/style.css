@@ -1,11 +1,11 @@
 :root {
-  --bg: #14191f;
-  --accent: #b4dc01;
-  --accent-green: #72be29;
-  --accent-purple: #6f2da8;
+  --bg: #f8fafc; /* light background */
+  --accent: #72be29; /* slightly deeper accent for contrast */
+  --accent-green: #b4dc01;
+  --accent-purple: #8c4bda;
   --accent-blue: #1496ff;
-  --text: #f4f6f8;
-  --muted: #9aa5b1;
+  --text: #1a1d21; /* dark text */
+  --muted: #64748b; /* softer gray */
   --radius: 12px;
   font-family: 'Inter', system-ui, sans-serif;
 }
@@ -26,7 +26,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(0, 0, 0, 0.03); /* subtle header/footer background */
   padding: 12px 24px;
   border-bottom: 2px solid var(--accent);
 }
@@ -65,7 +65,7 @@ nav a:hover, nav a.active {
 
 .hero .btn {
   background: var(--accent);
-  color: var(--text);
+  color: #fff;
   padding: 10px 20px;
   border-radius: var(--radius);
   text-decoration: none;
@@ -83,6 +83,3 @@ nav a:hover, nav a.active {
 @media (max-width: 600px) {
   nav ul { flex-direction: column; gap: 10px; }
 }
-
-
-
