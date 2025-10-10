@@ -1,10 +1,131 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="de">
 <head>
-  <title>Team Dynatrace GitHub Page</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Onboarding Tool — Projektübersicht</title>
+  <meta name="description" content="Onboarding Tool — Übersicht, Funktionen und Impressum" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --accent:#6ee7b7; --muted:#94a3b8; --glass: rgba(255,255,255,0.03);
+      --radius:14px; --maxw:1100px; font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#071028 0%, #091126 60%);color:#e6eef8;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:48px}
+    .wrap{width:100%;max-width:var(--maxw)}
+
+    header{display:flex;align-items:center;gap:18px;margin-bottom:28px}
+    .logo{width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#60a5fa);display:flex;align-items:center;justify-content:center;color:#04202a;font-weight:700;font-size:22px;box-shadow:0 6px 20px rgba(6,8,15,0.6)}
+    h1{margin:0;font-size:22px}
+    p.lead{margin:6px 0 0;color:var(--muted)}
+
+    .grid{display:grid;grid-template-columns:2fr 1fr;gap:20px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-radius:var(--radius);padding:20px;box-shadow:0 6px 30px rgba(2,6,23,0.5);}
+
+    .section-title{font-weight:600;margin-bottom:10px}
+    ul.features{list-style:none;padding:0;margin:0}
+    ul.features li{padding:10px 0;border-bottom:1px dashed rgba(255,255,255,0.03)}
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:var(--glass);color:var(--muted);font-size:13px;margin-right:8px}
+
+    .tech{display:flex;flex-wrap:wrap;gap:8px}
+    .tech span{background:rgba(255,255,255,0.02);padding:8px 10px;border-radius:10px;font-size:13px;color:var(--muted)}
+
+    footer{margin-top:18px;color:var(--muted);font-size:13px}
+
+    /* Impressum box */
+    .impressum{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:16px;border-radius:12px}
+
+    /* responsive */
+    @media (max-width:900px){.grid{grid-template-columns:1fr}}
+  </style>
 </head>
 <body>
-  <h1>Hello on Team Dynatrace Website!</h1>
-  <p>Welcome to our GitHub Page 🚀</p>
+  <div class="wrap">
+    <header>
+      <div class="logo">OT</div>
+      <div>
+        <h1>Onboarding Tool — Projektübersicht</h1>
+        <p class="lead">Schnelle statische Demo für GitHub Pages — inklusive Impressum &amp; Urheberrechtshinweis.</p>
+      </div>
+    </header>
+
+    <main class="grid">
+      <section class="card">
+        <div class="section-title">Ziel</div>
+        <p>Das Onboarding Tool unterstützt Bewerbungs- und Onboarding-Prozesse mit Nutzerverwaltung, Checklisten, Automatisierungen (Jira, Miro, Kommunikation) sowie Dashboard &amp; Statistik.</p>
+
+        <div style="margin-top:14px" class="section-title">Kernfunktionen</div>
+        <ul class="features">
+          <li><span class="pill">Nutzer</span>Anlegen von User-Profilen, Statusverwaltung, Archiv</li>
+          <li><span class="pill">Checklisten</span>Globale und individuelle Checklisten, Fortschritt sichtbar im Profil</li>
+          <li><span class="pill">Automatisierungen</span>Jira / Miro / Welcome-Messages / Optional OpenAPI</li>
+          <li><span class="pill">Dashboard</span>Übersicht: offene Bewerbungen, Interviews, aktive Onboardings</li>
+        </ul>
+
+        <div style="margin-top:14px" class="section-title">Technische Basis (Empfohlen)</div>
+        <div class="tech">
+          <span>Backend: Java (Spring Boot)</span>
+          <span>Frontend: React + Material Design</span>
+          <span>DB: PostgreSQL</span>
+          <span>Integrationen: Jira API, Miro API, Slack, OpenAPI</span>
+        </div>
+
+        <div style="margin-top:16px" class="section-title">Hinweise</div>
+        <p class="lead">Diese Seite ist eine statische Projektübersicht (HTML/CSS). In der Produktion empfehle ich ein eigenes React-Frontend + Spring Boot Backend wie oben beschrieben.</p>
+
+        <footer>
+          <div>Lizenz: MIT (platzhalter) — bitte anpassen.</div>
+        </footer>
+      </section>
+
+      <aside class="card">
+        <div class="section-title">Impressum &amp; Urheberrechte</div>
+
+        <div class="impressum">
+          <strong>Angaben gemäß § 5 TMG / Impressum</strong>
+          <p style="margin:8px 0 0">Anbieter / Firma: <em>DEIN_FIRMA_NAME</em><br>
+          Anschrift: <em>Straße 1, PLZ Stadt</em><br>
+          Verantwortlich: <em>Max Mustermann</em><br>
+          Kontakt: Tel: <em>+49 000 000000</em> · E-Mail: <a href="mailto:info@example.com">info@example.com</a></p>
+
+          <hr style="border:none;border-top:1px solid rgba(255,255,255,0.03);margin:10px 0">
+
+          <strong>Urheberrecht</strong>
+          <p style="margin:8px 0 0">Alle Inhalte (Texte, Design, Code) sind urheberrechtlich geschützt. Verwendung nur mit schriftlicher Zustimmung. Beispiel: © <span id="year">2025</span> DEIN_FIRMA_NAME. Lizenz: MIT — oder andere Lizenz nach Wahl.</p>
+
+          <hr style="border:none;border-top:1px solid rgba(255,255,255,0.03);margin:10px 0">
+
+          <strong>Haftung / Disclaimer</strong>
+          <p style="margin:8px 0 0">Diese Demo dient Informationszwecken. Für rechtsverbindliche Inhalte (Impressum/Datenschutz) bitte juristische Beratung hinzuziehen und die Pflichtangaben vollständig ausfüllen.</p>
+        </div>
+
+        <div style="margin-top:12px" class="section-title">Schnellstart (GitHub Pages)</div>
+        <ol style="padding-left:18px;margin:6px 0;color:var(--muted)">
+          <li>Repo erstellen: <code>username.github.io</code> oder beliebiges Repo + branch gh-pages</li>
+          <li>Diese Datei als <code>index.html</code> ins Repo committen</li>
+          <li>GitHub Pages aktivieren (Settings → Pages → Branch auswählen)</li>
+        </ol>
+
+      </aside>
+    </main>
+
+    <div style="margin-top:18px" class="card">
+      <div class="section-title">Quick Notes für Entwickler</div>
+      <ul class="features">
+        <li><strong>Frontend:</strong> Erstelle eine React-App (Vite / Create React App) mit Material UI; die statische Seite ist nur Demo.</li>
+        <li><strong>Backend:</strong> Spring Boot Services für Nutzerverwaltung, Checklisten &amp; Integrationen. OAuth 2.0 für API-Integrationen (Jira/Miro/Slack).</li>
+        <li><strong>Security:</strong> DSGVO prüfen, Logging &amp; Rollen (Admin / Captain / Buddie / User).</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <script>
+    // set current year for copyright
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
