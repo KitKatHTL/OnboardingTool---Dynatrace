@@ -60,7 +60,7 @@ nav a:hover, nav a.active {
   padding: 80px 20px;
   background: linear-gradient(135deg, var(--accent-green), var(--accent-purple));
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: linear-gradient(135deg, var(--accent-green), var(--accent-purple));
 }
 
 .hero .btn {
@@ -83,3 +83,4 @@ nav a:hover, nav a.active {
 @media (max-width: 600px) {
   nav ul { flex-direction: column; gap: 10px; }
 }
+
