@@ -1,10 +1,9 @@
-<!-- File: assets/css/style.css -->
 :root {
   --bg: #14191f;
-  --accent: #00a9ce;
-  --accent-green: #8dc63f;
-  --accent-purple: #6f42c1;
-  --accent-yellow: #f5c400;
+  --accent: #b4dc01;
+  --accent-green: #72be29;
+  --accent-purple: ##6f2da8;
+  --accent-blue: #1496ff;
   --text: #f4f6f8;
   --muted: #9aa5b1;
   --radius: 12px;
@@ -84,4 +83,5 @@ nav a:hover, nav a.active {
 @media (max-width: 600px) {
   nav ul { flex-direction: column; gap: 10px; }
 }
+
 
