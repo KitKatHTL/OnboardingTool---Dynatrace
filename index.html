@@ -1,36 +1,249 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Onboarding Tool – Übersicht</title>
-<link rel="stylesheet" href="assets/css/style.css">
-<script defer src="assets/js/main.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Onboarding Tool</title>
+  <style>
+    :root {
+      --indigo: #6366f1;
+      --purple: #7c3aed;
+      --blue: #0ea5e9;
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-500: #6b7280;
+      --gray-600: #4b5563;
+      --text-color: #111827;
+    }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      color: var(--text-color);
+      background: linear-gradient(to bottom, var(--gray-50), white, var(--gray-50));
+      margin: 0;
+    }
+    header {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .logo-icon {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 0.75rem;
+      background: linear-gradient(to bottom right, var(--indigo), var(--purple));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    nav a {
+      margin-left: 1rem;
+      text-decoration: none;
+      font-size: 0.875rem;
+      color: var(--text-color);
+    }
+    nav a:hover { text-decoration: underline; }
+    .btn-primary {
+      background: var(--indigo);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 0.375rem;
+      text-decoration: none;
+    }
+    .btn-secondary {
+      border: 1px solid var(--gray-200);
+      padding: 0.5rem 1rem;
+      border-radius: 0.375rem;
+      text-decoration: none;
+      color: var(--text-color);
+    }
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+    section { padding: 2rem 0; }
+    h1, h2, h3, h4 { margin: 0; }
+    h2 { font-size: 2rem; font-weight: 800; }
+    h3 { font-size: 1.5rem; font-weight: 700; }
+    .grid { display: grid; gap: 1.5rem; }
+    .grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+    .card {
+      background: white;
+      border-radius: 0.75rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      padding: 1rem;
+    }
+    .progress-bg {
+      background: var(--gray-100);
+      border-radius: 9999px;
+      height: 0.5rem;
+      overflow: hidden;
+    }
+    .progress {
+      height: 100%;
+      border-radius: 9999px;
+      background: linear-gradient(90deg, var(--blue), var(--indigo));
+    }
+    footer {
+      border-top: 1px solid var(--gray-200);
+      padding: 1.5rem 0;
+      font-size: 0.875rem;
+      color: var(--gray-600);
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+  </style>
 </head>
 <body>
-<header class="site-header">
-<div class="logo">OT</div>
-<nav>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="projektbeschreibung.html">Projekt</a></li>
-<li><a href="impressum.html">Impressum</a></li>
-</ul>
-</nav>
-</header>
+  <header>
+    <div class="logo">
+      <div class="logo-icon">OT</div>
+      <div>
+        <h1>Onboarding Tool</h1>
+        <p style="font-size: 0.875rem; color: var(--gray-500);">Automatisierung · Checklisten · Integrationen</p>
+      </div>
+    </div>
+    <nav>
+      <a href="#features">Funktionen</a>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#tech">Tech</a>
+      <a href="#contact" class="btn-primary">GitHub</a>
+    </nav>
+  </header>
 
+  <main>
+    <section class="grid grid-2" style="align-items:center;">
+      <div>
+        <h2>Effizientes Onboarding — weniger Arbeit, mehr Überblick</h2>
+        <p style="margin-top:1rem;color:var(--gray-600);">Verwalte Bewerbungen, Checklisten und Integrationen (Jira, Miro, Slack) an einer zentralen Stelle. Ideal für Teams mit häufigen Neueinstellungen.</p>
+        <div style="margin-top:1.5rem;display:flex;gap:0.75rem;">
+          <a href="#features" class="btn-primary">Funktionen ansehen</a>
+          <a href="#dashboard" class="btn-secondary">Demo Dashboard</a>
+        </div>
+        <p style="margin-top:1rem;font-size:0.75rem;color:var(--gray-500);">Hinweis: Backend-Implementierung in Java (Spring Boot); diese Landingpage ist ein statisches Frontend für GitHub Pages.</p>
+      </div>
+      <div class="card">
+        <div id="mock-dashboard"></div>
+      </div>
+    </section>
 
-<main class="container">
-<section class="hero">
-<h1>Onboarding Tool</h1>
-<p>Ein modernes Webtool zur Unterstützung des Bewerbungs- und Onboarding-Prozesses mit Automatisierungen, Checklisten und Dashboards.</p>
-<a class="btn" href="projektbeschreibung.html">Mehr erfahren</a>
-</section>
-</main>
+    <section id="features">
+      <h3>Funktionen</h3>
+      <div class="grid grid-2" id="features-list"></div>
+    </section>
 
+    <section id="dashboard">
+      <h3>Mock Dashboard</h3>
+      <p style="font-size:0.875rem;color:var(--gray-600);margin-top:0.5rem;">Kompakte Übersicht mit Status-Kacheln, Fortschrittsbalken und User-Liste.</p>
+      <div class="grid grid-3" id="status-cards"></div>
+      <div class="card" style="margin-top:1.5rem;">
+        <h4>Neueste Bewerber</h4>
+        <div id="applicants"></div>
+      </div>
+    </section>
 
-<footer class="site-footer">
-<p>© <span id="year"></span> DEIN_FIRMA_NAME – Alle Rechte vorbehalten.</p>
-</footer>
+    <section id="tech">
+      <h3>Technische Basis</h3>
+      <ul style="margin-top:1rem;color:var(--gray-700);">
+        <li>Backend: Java (Spring Boot)</li>
+        <li>Frontend: HTML, CSS, JS (Tailwind-Style nachgebildet)</li>
+        <li>Datenbank: PostgreSQL</li>
+        <li>Integrationen: Jira API, Miro API, (optional) Slack API & OpenAPI</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h3>Deployment & GitHub Pages</h3>
+      <ol style="margin-top:1rem;color:var(--gray-700);">
+        <li>Erstelle ein neues GitHub-Repository und push den Inhalt dieser HTML-Datei.</li>
+        <li>Aktiviere GitHub Pages in den Repository-Einstellungen.</li>
+        <li>Öffne die URL, um die Seite anzuzeigen.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <span>© Onboarding Tool — Beispiel-UI</span>
+    <span>Erstellt für GitHub Pages • Vanilla JS + CSS</span>
+  </footer>
+
+  <script>
+    const features = [
+      {title: 'Nutzerverwaltung', bullets: ['Anlegen von Usern mit Bewerbungsunterlagen', 'Statusverwaltung: Bewerbung → nächster Step oder Archiv', 'Manuelle Archivierung jederzeit möglich']},
+      {title: 'Checklisten', bullets: ['Standard-Checkliste für alle New Starter', 'Anpassbar global & individuell', 'Fortschritt sichtbar im User-Profil']},
+      {title: 'Automatisierungen', bullets: ['Jira: Tickets automatisch erstellen (z. B. 1 Woche vor Start)', 'Miro: Whiteboard-Template klonen & freigeben', 'Welcome E-Mail / Slack Nachricht, optional OpenAPI für Texte']},
+      {title: 'Dashboard & Statistik', bullets: ['Übersicht offene Bewerbungen, Interviews, aktive Onboardings', 'Fortschritts- und Statusdarstellung für Team Leads']}
+    ];
+
+    const featuresList = document.getElementById('features-list');
+    features.forEach(f => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `<h4>${f.title}</h4><ul style="margin-top:0.75rem;color:var(--gray-600);font-size:0.875rem;">${f.bullets.map(b=>`<li>${b}</li>`).join('')}</ul>`;
+      featuresList.appendChild(card);
+    });
+
+    const statusData = [
+      {title:'Offene Bewerbungen',value:8},
+      {title:'In Interviews',value:3},
+      {title:'Aktive Onboardings',value:5}
+    ];
+
+    const statusContainer = document.getElementById('status-cards');
+    statusData.forEach(s=>{
+      const div = document.createElement('div');
+      div.className = 'card';
+      div.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:center;"><div style="font-size:0.875rem;color:var(--gray-500);">${s.title}</div><div style="font-size:1.5rem;font-weight:bold;">${s.value}</div></div><div class='progress-bg' style='margin-top:1rem;'><div class='progress' style='width:${Math.min(100,s.value*10)}%'></div></div>`;
+      statusContainer.appendChild(div);
+    });
+
+    const applicants = [
+      {name:'Anna Müller', role:'Frontend Developer', progress:40},
+      {name:'Tom Bauer', role:'Data Engineer', progress:70},
+      {name:'Lea Schmidt', role:'QA', progress:20}
+    ];
+
+    const appContainer = document.getElementById('applicants');
+    applicants.forEach(a=>{
+      const row = document.createElement('div');
+      row.style.padding='0.75rem 0';
+      row.style.display='flex';
+      row.style.justifyContent='space-between';
+      row.innerHTML = `<div><div style='font-weight:500;'>${a.name}</div><div style='font-size:0.75rem;color:var(--gray-500);'>${a.role}</div></div><div style='width:200px;'><div style='font-size:0.75rem;color:var(--gray-500);margin-bottom:0.25rem;'>Fortschritt</div><div class='progress-bg'><div class='progress' style='width:${a.progress}%'></div></div></div>`;
+      appContainer.appendChild(row);
+    });
+
+    document.getElementById('mock-dashboard').innerHTML = `
+      <div style='display:flex;justify-content:space-between;align-items:center;'>
+        <div><div style='font-size:0.75rem;color:var(--gray-500);'>Team Onboarding</div><div style='font-size:1.125rem;font-weight:600;'>September Quarter</div></div>
+        <div style='font-size:0.875rem;color:var(--gray-500);'>Letzte Aktualisierung: 2025-10-16</div>
+      </div>
+      <div class='grid grid-3' style='margin-top:1rem;'>
+        <div class='card'><div style='font-size:0.75rem;color:var(--gray-500);'>Bewerbungen</div><div style='font-size:1.25rem;font-weight:bold;'>8</div></div>
+        <div class='card'><div style='font-size:0.75rem;color:var(--gray-500);'>Interviews</div><div style='font-size:1.25rem;font-weight:bold;'>3</div></div>
+        <div class='card'><div style='font-size:0.75rem;color:var(--gray-500);'>Aktive Onboardings</div><div style='font-size:1.25rem;font-weight:bold;'>5</div></div>
+      </div>
+      <div class='card' style='margin-top:1rem;'>
+        <div style='font-size:0.875rem;color:var(--gray-600);'>Schnellaktionen</div>
+        <div style='margin-top:0.5rem;display:flex;gap:0.5rem;'>
+          <button class='btn-primary' style='font-size:0.75rem;'>Neuen Nutzer anlegen</button>
+          <button class='btn-secondary' style='font-size:0.75rem;'>Checkliste generieren</button>
+        </div>
+      </div>`;
+  </script>
 </body>
 </html>
