@@ -1,43 +1,123 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Impressum – Onboarding Tool</title>
-<link rel="stylesheet" href="assets/css/style.css">
-<script defer src="assets/js/main.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Impressum — Onboarding Tool</title>
+  <style>
+    :root {
+      --indigo: #6366f1;
+      --purple: #7c3aed;
+      --blue: #0ea5e9;
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-500: #6b7280;
+      --gray-600: #4b5563;
+      --gray-700: #374151;
+      --text-color: #111827;
+    }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      color: var(--text-color);
+      background: linear-gradient(to bottom, var(--gray-50), white, var(--gray-50));
+      margin: 0;
+    }
+    header {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .logo-icon {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 0.75rem;
+      background: linear-gradient(to bottom right, var(--indigo), var(--purple));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    nav a {
+      margin-left: 1rem;
+      text-decoration: none;
+      font-size: 0.875rem;
+      color: var(--text-color);
+    }
+    nav a:hover { text-decoration: underline; }
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+    h1, h3, h4 { margin: 0; }
+    h1 { font-size: 2rem; font-weight: 800; margin-bottom: 1rem; }
+    h3 { font-size: 1.5rem; font-weight: 700; margin-top: 1.5rem; }
+    p { margin: 0.5rem 0; color: var(--gray-700); line-height: 1.5; }
+    footer {
+      border-top: 1px solid var(--gray-200);
+      padding: 1.5rem 0;
+      font-size: 0.875rem;
+      color: var(--gray-600);
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+  </style>
 </head>
 <body>
-<header class="site-header">
-<div class="logo">OT</div>
-<nav>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="projektbeschreibung.html">Projekt</a></li>
-<li><a href="impressum.html" class="active">Impressum</a></li>
-</ul>
-</nav>
-</header>
+  <header>
+    <div class="logo">
+      <div class="logo-icon">OT</div>
+      <div>
+        <h1>Onboarding Tool</h1>
+        <p style="font-size:0.875rem; color: var(--gray-500);">Automatisierung · Checklisten · Integrationen</p>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html">Startseite</a>
+    </nav>
+  </header>
 
+  <main>
+    <h1>Impressum</h1>
 
-<main class="container">
-<h1>Impressum</h1>
-<p><strong>Angaben gemäß § 5 TMG</strong></p>
-<p>DEIN_FIRMA_NAME<br>Straße 1<br>PLZ Stadt<br>Vertreten durch: Max Mustermann</p>
-<p>Kontakt: <a href="mailto:info@example.com">info@example.com</a></p>
+    <h3>Angaben gemäß § 5 TMG</h3>
+    <p>
+      DEIN_FIRMA_NAME<br>
+      Straße 1<br>
+      PLZ Stadt<br>
+      Vertreten durch: Max Mustermann
+    </p>
 
+    <h3>Kontakt</h3>
+    <p>info@example.com</p>
 
-<h2>Urheberrecht</h2>
-<p>Alle Inhalte dieser Website (Texte, Design, Code) sind urheberrechtlich geschützt. Nutzung oder Vervielfältigung nur mit schriftlicher Zustimmung.</p>
+    <h3>Urheberrecht</h3>
+    <p>
+      Alle Inhalte dieser Website (Texte, Design, Code) sind urheberrechtlich geschützt. 
+      Nutzung oder Vervielfältigung nur mit schriftlicher Zustimmung.
+    </p>
 
+    <h3>Haftungsausschluss</h3>
+    <p>
+      Diese Website dient ausschließlich Informationszwecken. Keine Haftung für externe Inhalte oder verlinkte Seiten.
+    </p>
+  </main>
 
-<h2>Haftungsausschluss</h2>
-<p>Diese Website dient ausschließlich Informationszwecken. Keine Haftung für externe Inhalte oder verlinkte Seiten.</p>
-</main>
-
-
-<footer class="site-footer">
-<p>© <span id="year"></span> DEIN_FIRMA_NAME – Alle Rechte vorbehalten.</p>
-</footer>
+  <footer>
+    <span>© Onboarding Tool — Beispiel-UI</span>
+    <span>Erstellt für GitHub Pages • Vanilla JS + CSS</span>
+  </footer>
 </body>
 </html>
