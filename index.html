@@ -1,164 +1,156 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Onboarding Tool</title>
-  <style>
-    :root {
-      --indigo: #6366f1;
-      --purple: #7c3aed;
-      --blue: #0ea5e9;
-      --gray-50: #f9fafb;
-      --gray-100: #f3f4f6;
-      --gray-200: #e5e7eb;
-      --gray-500: #6b7280;
-      --gray-600: #4b5563;
-      --text-color: #111827;
-    }
-    body {
-      font-family: system-ui, -apple-system, sans-serif;
-      color: var(--text-color);
-      background: linear-gradient(to bottom, var(--gray-50), white, var(--gray-50));
-      margin: 0;
-    }
-    header {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    header .logo {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-    .logo-icon {
-      width: 3rem;
-      height: 3rem;
-      border-radius: 0.75rem;
-      background: linear-gradient(to bottom right, var(--indigo), var(--purple));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: bold;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    nav a {
-      margin-left: 1rem;
-      text-decoration: none;
-      font-size: 0.875rem;
-      color: var(--text-color);
-    }
-    nav a:hover { text-decoration: underline; }
-    .btn-primary {
-      background: var(--indigo);
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 0.375rem;
-      text-decoration: none;
-    }
-    .btn-secondary {
-      border: 1px solid var(--gray-200);
-      padding: 0.5rem 1rem;
-      border-radius: 0.375rem;
-      text-decoration: none;
-      color: var(--text-color);
-    }
-    main {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1.5rem;
-    }
-    section { padding: 2rem 0; }
-    h1, h2, h3, h4 { margin: 0; }
-    h2 { font-size: 2rem; font-weight: 800; }
-    h3 { font-size: 1.5rem; font-weight: 700; }
-    .grid { display: grid; gap: 1.5rem; }
-    .grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
-    .card {
-      background: white;
-      border-radius: 0.75rem;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-      padding: 1rem;
-    }
-    footer {
-      border-top: 1px solid var(--gray-200);
-      padding: 1.5rem 0;
-      font-size: 0.875rem;
-      color: var(--gray-600);
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Onboarding Tool - Dynatrace</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <div class="logo-icon">OT</div>
-      <div>
-        <h1>Onboarding Tool</h1>
-        <p style="font-size: 0.875rem; color: var(--gray-500);">Automatisierung · Checklisten · Integrationen</p>
-      </div>
-    </div>
-    <nav>
-      <a href="#features">Funktionen</a>
-      <a href="#tech">Tech</a>
-      <a href="./impressum.html" class="btn-primary">Impressum</a>
-    </nav>
-  </header>
-
-  <main>
-    <section class="grid grid-2" style="align-items:center;">
-      <div>
-        <h2>Effizientes Onboarding — weniger Arbeit, mehr Überblick</h2>
-        <p style="margin-top:1rem;color:var(--gray-600);">Verwalte Bewerbungen, Checklisten und Integrationen (Jira, Miro, Slack) an einer zentralen Stelle. Ideal für Teams mit häufigen Neueinstellungen.</p>
-        <div style="margin-top:1.5rem;display:flex;gap:0.75rem;">
-          <a href="#features" class="btn-primary">Funktionen ansehen</a>
-          <a href="#tech" class="btn-secondary">Technische Basis</a>
+    <header class="site-header">
+        <div class="logo">
+            <span>Onboarding Tool - Dynatrace</span>
         </div>
-      </div>
-    </section>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="projektbeschreibung.html">Projekt</a></li>
+                <li><a href="impressum.html">Impressum</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <section id="features">
-      <h3>Funktionen</h3>
-      <div class="grid grid-2" id="features-list"></div>
-    </section>
+    <main>
+        <section class="hero">
+            <h1>Effizientes Onboarding</h1>
+            <p>Automatisieren Sie Ihre Bewerbungs- und Onboarding-Prozesse mit unserer zentralen Lösung. 
+               Ideal für Teams mit häufigen Neueinstellungen.</p>
+            <div class="buttons">
+                <a href="#features" class="btn btn-primary">Funktionen entdecken</a>
+                <a href="projektbeschreibung.html" class="btn btn-secondary">Mehr erfahren</a>
+            </div>
+        </section>
 
-    <section id="tech">
-      <h3>Technische Basis</h3>
-      <ul style="margin-top:1rem;color:var(--gray-700);">
-        <li>Backend: Java (Spring Boot)</li>
-        <li>Frontend: HTML, CSS, JS (Tailwind-Style nachgebildet)</li>
-        <li>Datenbank: PostgreSQL</li>
-        <li>Integrationen: Jira API, Miro API, (optional) Slack API & OpenAPI</li>
-      </ul>
-    </section>
-  </main>
+        <div class="container">
+            <section id="features">
+                <h2>Unsere Funktionen</h2>
+                <div class="grid" id="features-list">
+                    <!-- Features werden per JavaScript eingefügt -->
+                </div>
+            </section>
 
-  <footer>
-    <span>© Onboarding Tool</span>
-  </footer>
+            <section id="tech">
+                <h2>Technische Basis</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Backend</h3>
+                        <p>Entwickelt mit Java (Spring Boot) für robuste und skalierbare Leistung</p>
+                    </div>
+                    <div class="card">
+                        <h3>Frontend</h3>
+                        <p>Modernes, responsives Design mit HTML5, CSS3 und JavaScript</p>
+                    </div>
+                    <div class="card">
+                        <h3>Datenbank</h3>
+                        <p>PostgreSQL für zuverlässige und sichere Datenspeicherung</p>
+                    </div>
+                    <div class="card">
+                        <h3>Integrationen</h3>
+                        <p>Nahtlose Anbindung an Jira, Miro, Slack und weitere Systeme via API</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
 
-  <script>
-    const features = [
-      {title: 'Nutzerverwaltung', bullets: ['Anlegen von Usern mit Bewerbungsunterlagen', 'Statusverwaltung: Bewerbung → nächster Step oder Archiv', 'Manuelle Archivierung jederzeit möglich']},
-      {title: 'Checklisten', bullets: ['Standard-Checkliste für alle New Starter', 'Anpassbar global & individuell', 'Fortschritt sichtbar im User-Profil']},
-      {title: 'Automatisierungen', bullets: ['Jira: Tickets automatisch erstellen (z. B. 1 Woche vor Start)', 'Miro: Whiteboard-Template klonen & freigeben', 'Welcome E-Mail / Slack Nachricht, optional OpenAPI für Texte']},
-      {title: 'Dashboard & Statistik', bullets: ['Übersicht offene Bewerbungen, Interviews, aktive Onboardings', 'Fortschritts- und Statusdarstellung für Team Leads']}
-    ];
+      <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Team</h4>
+                    <ul>
+                        <li>Johannes Mayer</li>
+                        <li>Lukas Kropfreiter</li>
+                        <li>Tobias Pretl</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="projektbeschreibung.html">Projekt</a></li>
+                        <li><a href="impressum.html">Impressum</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Kontakt</h4>
+                    <ul>
+                        <li>HTL Perg</li>
+                        <li>Machlandstraße 48</li>
+                        <li>4320 Perg</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Onboarding Tool | HTL Perg</p>
+            </div>
+        </div>
+    </footer>
 
-    const featuresList = document.getElementById('features-list');
-    features.forEach(f => {
-      const card = document.createElement('div');
-      card.className = 'card';
-      card.innerHTML = `<h4>${f.title}</h4><ul style="margin-top:0.75rem;color:var(--gray-600);font-size:0.875rem;">${f.bullets.map(b=>`<li>${b}</li>`).join('')}</ul>`;
-      featuresList.appendChild(card);
-    });
-  </script>
+    <script>
+        const features = [
+            {
+                title: 'Bewerbermanagement',
+                description: 'Effiziente Verwaltung von Bewerbern',
+                bullets: [
+                    'Digitale Bewerbungsunterlagen-Verwaltung',
+                    'Intelligentes Statustracking',
+                    'Automatische Archivierung'
+                ]
+            },
+            {
+                title: 'Smarte Checklisten',
+                description: 'Anpassbare Onboarding-Prozesse',
+                bullets: [
+                    'Vordefinierte Standardprozesse',
+                    'Individuelle Anpassungsmöglichkeiten',
+                    'Fortschrittsüberwachung in Echtzeit'
+                ]
+            },
+            {
+                title: 'Automatisierung',
+                description: 'Nahtlose Systemintegration',
+                bullets: [
+                    'Automatische Jira-Ticket-Erstellung',
+                    'Miro-Board Integration',
+                    'Slack-Benachrichtigungen'
+                ]
+            },
+            {
+                title: 'Analytics Dashboard',
+                description: 'Umfassende Prozessübersicht',
+                bullets: [
+                    'Echtzeit-Statusübersicht',
+                    'Fortschrittsanalysen',
+                    'Team-Performance Metriken'
+                ]
+            }
+        ];
+
+        const featuresList = document.getElementById('features-list');
+        features.forEach(feature => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
+                <h3>${feature.title}</h3>
+                <p>${feature.description}</p>
+                <ul>
+                    ${feature.bullets.map(bullet => `<li>${bullet}</li>`).join('')}
+                </ul>
+            `;
+            featuresList.appendChild(card);
+        });
+    </script>
 </body>
 </html>
