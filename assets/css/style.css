@@ -1,14 +1,18 @@
 :root {
-    --primary: #6f2c91;          /* Dynatrace Violett */
-    --secondary: #1496ff;        /* Dynatrace Blau */
-    --background: #f8f9fc;      /* Heller Hintergrund */
+    --primary: #1d1e42;         /* Dunkelblau - Hauptfarbe */
+    --secondary: #5b6af5;       /* Helles Violett - Akzentfarbe */
+    --background: #ffffff;      /* Reines Weiß für klaren Look */
+    --surface: #f8fafc;        /* Leicht grauer Hintergrund für Karten */
     --white: #ffffff;
-    --text-primary: #2d3748;    /* Dunkelgrau für Text */
-    --text-secondary: #718096;  /* Mittelgrau für weniger wichtigen Text */
-    --border-color: #e2e8f0;    /* Hellgrau für Ränder */
-    --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    --radius: 6px;
-    --transition: all 0.2s ease;
+    --text-primary: #1a1b41;   /* Dunkel für Überschriften */
+    --text-secondary: #4a5568; /* Grau für Textkörper */
+    --border-color: #edf2f7;   /* Sehr helles Grau für subtile Ränder */
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 4px 6px rgba(0, 0, 0, 0.07);
+    --radius: 12px;            /* Größerer Radius für moderneren Look */
+    --transition: all 0.3s ease;
+    --max-width: 1140px;       /* Standard Container Breite */
+    --spacing: 2rem;           /* Einheitlicher Abstand */
 }
 
 * {
@@ -21,52 +25,78 @@ body {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     color: var(--text-primary);
     background-color: var(--background);
-    line-height: 1.6;
+    line-height: 1.7;
+    letter-spacing: -0.01em;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: var(--max-width);
     margin: 0 auto;
-    padding: 2rem;
+    padding: var(--spacing);
+    width: 90%;
 }
 
 /* Header Styles */
 .site-header {
     background: var(--white);
-    box-shadow: var(--shadow);
-    padding: 1rem 2rem;
-    width: 100%;
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.25rem 0;
+    margin-bottom: var(--spacing);
+}
+
+.site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 1.25rem;
+    font-weight: 600;
     color: var(--primary);
     text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    letter-spacing: -0.02em;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
 }
 
 nav a {
     color: var(--text-secondary);
     text-decoration: none;
     font-weight: 500;
-    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+    padding: 0.5rem 0.75rem;
     border-radius: var(--radius);
     transition: var(--transition);
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--secondary);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+nav a:hover::after,
+nav a.active::after {
+    transform: scaleX(1);
 }
 
 nav a:hover,
 nav a.active {
     color: var(--primary);
-    background: rgba(54, 90, 210, 0.1);
 }
 
 /* Main Content */
@@ -117,29 +147,41 @@ ul li {
     padding-left: 1rem;
 }
 
+/* Grid Layout */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
 /* Cards */
 .card {
-    background: var(--white);
+    background: var(--surface);
     border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    padding: 1.5rem;
-    border: 1px solid var(--border-color);
+    padding: 2rem;
     transition: var(--transition);
+    border: 1px solid var(--border-color);
 }
 
 .card:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+    background: var(--white);
 }
 
 .card h3 {
-    color: var(--text-primary);
+    color: var(--primary);
+    font-size: 1.25rem;
     margin-bottom: 1rem;
+    font-weight: 600;
 }
 
 .card p {
     color: var(--text-secondary);
-    line-height: 1.5;
-    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
 }
 
 .card ul {
@@ -149,89 +191,128 @@ ul li {
 
 .card ul li {
     position: relative;
-    padding-left: 1.25rem;
-    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
     color: var(--text-secondary);
+    font-size: 0.95rem;
 }
 
 .card ul li::before {
-    content: '•';
+    content: '→';
     position: absolute;
     left: 0;
-    color: var(--primary);
+    color: var(--secondary);
+    font-size: 0.9rem;
 }
 
 /* Hero Section */
 .hero {
     text-align: center;
-    padding: 4rem 2rem;
-    background: var(--primary);
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
     color: var(--white);
-    margin-bottom: 3rem;
+    margin-bottom: var(--spacing);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="1" height="1" fill="rgba(255,255,255,0.05)"/></svg>');
+    opacity: 0.3;
 }
 
 .hero h1 {
     color: var(--white);
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+    position: relative;
 }
 
 .hero p {
     color: rgba(255, 255, 255, 0.9);
-    font-size: 1.2rem;
-    max-width: 600px;
-    margin: 0 auto 2rem;
-    line-height: 1.5;
+    font-size: 1.25rem;
+    max-width: 640px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.6;
+    position: relative;
+    font-weight: 400;
 }
 
 /* Buttons */
+.buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
 .btn {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.875rem 2rem;
     border-radius: var(--radius);
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 1rem;
     transition: var(--transition);
+    position: relative;
+    overflow: hidden;
 }
 
 .btn-primary {
     background: var(--white);
     color: var(--primary);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .btn-primary:hover {
-    background: var(--background);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .btn-secondary {
     background: transparent;
     color: var(--white);
-    border: 1px solid var(--white);
+    border: 2px solid rgba(255, 255, 255, 0.8);
 }
 
 .btn-secondary:hover {
     background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
 }
 
 /* Footer */
 .site-footer {
-    background: var(--white);
-    padding: 3rem 0;
-    margin-top: 4rem;
+    background: var(--surface);
+    padding: 4rem 0 2rem;
+    margin-top: 6rem;
     border-top: 1px solid var(--border-color);
 }
 
 .footer-content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-bottom: 2rem;
+    gap: 3rem;
+    margin-bottom: 3rem;
 }
 
 .footer-section h4 {
     color: var(--primary);
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
+    margin-bottom: 1.25rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .footer-section ul {
@@ -241,18 +322,20 @@ ul li {
 }
 
 .footer-section ul li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
     color: var(--text-secondary);
+    font-size: 0.95rem;
 }
 
 .footer-section ul li a {
     color: var(--text-secondary);
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: var(--transition);
+    padding: 0.25rem 0;
 }
 
 .footer-section ul li a:hover {
-    color: var(--primary);
+    color: var(--secondary);
 }
 
 .footer-bottom {
@@ -264,7 +347,8 @@ ul li {
 .footer-bottom p {
     color: var(--text-secondary);
     margin: 0;
-    font-size: 0.9rem;
+    font-size: 0.875rem;
+    opacity: 0.8;
 }
 
 @media (max-width: 768px) {
